@@ -1,3 +1,5 @@
 .openai/
 dist/
 .qa-chrome-profile/
+.source/
+.qa-smoke.mjs

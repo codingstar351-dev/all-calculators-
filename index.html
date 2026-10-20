@@ -1,213 +1,23 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f4f1ea" />
-    <meta name="description" content="A clean, responsive calculator with an interactive collection." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f1ea">
+    <meta name="description" content="A clean, responsive calculator with an interactive collection.">
     <title>Calculator</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="js/activities/runner.js" defer></script>
-    <script src="js/activities/flight.js" defer></script>
-    <script src="js/activities/puzzle2048.js" defer></script>
-    <script src="js/activities/knockout.js" defer></script>
-    <script src="js/app.js" defer></script>
   </head>
-  <body class="is-locked">
-    <a class="skip-link" href="#main-content">Skip to content</a>
-
-    <header class="site-header">
-      <a class="brand" href="#" aria-label="Calculator home">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <span class="brand-copy">
-          <strong data-brand-title>Calculator</strong>
-          <small data-brand-subtitle>Everyday utility</small>
-        </span>
-      </a>
-
-      <nav class="tabs" aria-label="Main navigation">
-        <button class="tab is-active" type="button" data-tab="calculator" aria-current="page">
-          Calculator
-        </button>
-        <button class="tab collection-tab" type="button" data-tab="collection" hidden>
-          Collection <span class="tab-count">04</span>
-        </button>
-      </nav>
-    </header>
-
-    <main id="main-content">
-      <section class="view calculator-view is-active" data-view="calculator" aria-labelledby="calculator-title">
-        <div class="calculator-shell">
-          <div class="calculator-heading">
-            <div>
-              <p class="eyebrow">Standard mode</p>
-              <h1 id="calculator-title">Calculator</h1>
-            </div>
-            <span class="status-dot" aria-label="Calculator ready"></span>
-          </div>
-
-          <div class="calculator-display" aria-live="polite">
-            <span class="calculation-history" data-history>&nbsp;</span>
-            <output data-display>0</output>
-          </div>
-
-          <div class="keypad" aria-label="Calculator keypad">
-            <button class="key key-soft" type="button" data-action="clear">AC</button>
-            <button class="key key-soft" type="button" data-action="sign">±</button>
-            <button class="key key-soft" type="button" data-action="percent">%</button>
-            <button class="key key-accent" type="button" data-operator="/" aria-label="Divide">÷</button>
-
-            <button class="key" type="button" data-number="7">7</button>
-            <button class="key" type="button" data-number="8">8</button>
-            <button class="key" type="button" data-number="9">9</button>
-            <button class="key key-accent" type="button" data-operator="*" aria-label="Multiply">×</button>
-
-            <button class="key" type="button" data-number="4">4</button>
-            <button class="key" type="button" data-number="5">5</button>
-            <button class="key" type="button" data-number="6">6</button>
-            <button class="key key-accent" type="button" data-operator="-" aria-label="Subtract">−</button>
-
-            <button class="key" type="button" data-number="1">1</button>
-            <button class="key" type="button" data-number="2">2</button>
-            <button class="key" type="button" data-number="3">3</button>
-            <button class="key key-accent" type="button" data-operator="+" aria-label="Add">+</button>
-
-            <button class="key key-zero" type="button" data-number="0">0</button>
-            <button class="key" type="button" data-action="decimal">.</button>
-            <button class="key key-equals" type="button" data-action="equals" aria-label="Equals">=</button>
-          </div>
-
-          <p class="keyboard-note">Keyboard input supported</p>
-        </div>
-      </section>
-
-      <section class="view collection-view" data-view="collection" aria-labelledby="collection-title" hidden>
-        <div class="collection-hero">
-          <div>
-            <p class="eyebrow">Unlocked collection</p>
-            <h1 id="collection-title">Choose your next run.</h1>
-            <p class="hero-copy">Four quick challenges. No downloads or sign-in—just choose a card to begin.</p>
-          </div>
-          <div class="hero-orbit" aria-hidden="true">
-            <span class="orbit-ring"></span>
-            <span class="orbit-core">04</span>
-          </div>
-        </div>
-
-        <div class="activity-library" data-activity-library>
-          <article class="activity-card card-runner">
-            <div class="card-art runner-art" aria-hidden="true">
-              <span class="lane lane-a"></span><span class="lane lane-b"></span><span class="runner-figure"></span>
-            </div>
-            <div class="card-body">
-              <div class="card-meta"><span>Endless runner</span><span>01</span></div>
-              <h2>Rail Rush</h2>
-              <p>Switch lanes, leap barriers, and keep the streak alive as the pace climbs.</p>
-              <button class="play-button" type="button" data-open-activity="runner">Open <span>↗</span></button>
-            </div>
-          </article>
-
-          <article class="activity-card card-flight">
-            <div class="card-art flight-art" aria-hidden="true">
-              <span class="sun"></span><span class="mountain mountain-a"></span><span class="mountain mountain-b"></span><span class="glider">➤</span>
-            </div>
-            <div class="card-body">
-              <div class="card-meta"><span>Flight challenge</span><span>02</span></div>
-              <h2>Flight Lab</h2>
-              <p>Balance lift and gravity, thread the rings, and stay airborne as long as you can.</p>
-              <button class="play-button" type="button" data-open-activity="flight">Open <span>↗</span></button>
-            </div>
-          </article>
-
-          <article class="activity-card card-puzzle">
-            <div class="card-art puzzle-art" aria-hidden="true">
-              <span>2</span><span>0</span><span>4</span><span>8</span>
-            </div>
-            <div class="card-body">
-              <div class="card-meta"><span>Number puzzle</span><span>03</span></div>
-              <h2>Merge 2048</h2>
-              <p>Slide matching tiles together, build bigger numbers, and chase the classic 2048 tile.</p>
-              <button class="play-button" type="button" data-open-activity="puzzle">Open <span>↗</span></button>
-            </div>
-          </article>
-
-          <article class="activity-card card-knockout">
-            <div class="card-art knockout-art" aria-hidden="true">
-              <span class="platform"></span><span class="bean bean-a"></span><span class="bean bean-b"></span><span class="bean bean-c"></span>
-            </div>
-            <div class="card-body">
-              <div class="card-meta"><span>Obstacle survival</span><span>04</span></div>
-              <h2>Obstacle Party</h2>
-              <p>Dodge the incoming chaos and survive every second on a shifting neon course.</p>
-              <button class="play-button" type="button" data-open-activity="knockout">Open <span>↗</span></button>
-            </div>
-          </article>
-        </div>
-
-        <div class="activity-stage" data-activity-stage hidden>
-          <button class="back-button" type="button" data-close-activity>← Back to collection</button>
-
-          <section class="activity-panel" data-activity-panel="runner" hidden>
-            <div class="activity-panel-header">
-              <div><p class="eyebrow">Endless runner</p><h2>Rail Rush</h2></div>
-              <div class="score-pill">Score <strong data-runner-score>0</strong></div>
-            </div>
-            <canvas id="runner-canvas" width="900" height="500" aria-label="Rail Rush activity area"></canvas>
-            <div class="activity-controls four-controls">
-              <button type="button" data-runner-control="left">← Left</button>
-              <button type="button" data-runner-control="right">Right →</button>
-              <button type="button" data-runner-control="jump">Jump</button>
-              <button class="primary-control" type="button" data-runner-control="start">Start / Restart</button>
-            </div>
-            <p class="activity-help">Arrow keys or A/D to move · Space to jump</p>
-          </section>
-
-          <section class="activity-panel" data-activity-panel="flight" hidden>
-            <div class="activity-panel-header">
-              <div><p class="eyebrow">Flight challenge</p><h2>Flight Lab</h2></div>
-              <div class="score-pill">Rings <strong data-flight-score>0</strong></div>
-            </div>
-            <canvas id="flight-canvas" width="900" height="500" aria-label="Flight Lab activity area"></canvas>
-            <div class="activity-controls two-controls">
-              <button type="button" data-flight-start>Start flight</button>
-              <button class="primary-control wide-control" type="button" data-flight-control>Hold for lift</button>
-            </div>
-            <p class="activity-help">Hold Space, mouse, or touch to climb · release to glide</p>
-          </section>
-
-          <section class="activity-panel" data-activity-panel="puzzle" hidden>
-            <div class="activity-panel-header puzzle-header">
-              <div><p class="eyebrow">Number puzzle</p><h2>Merge 2048</h2></div>
-              <div class="puzzle-actions"><div class="score-pill">Score <strong data-puzzle-score>0</strong></div><button type="button" data-puzzle-new>New round</button></div>
-            </div>
-            <div class="puzzle-board" data-puzzle-board aria-label="2048 activity board"></div>
-            <div class="swipe-pad" aria-label="2048 direction controls">
-              <button type="button" data-puzzle-move="up">↑</button>
-              <button type="button" data-puzzle-move="left">←</button>
-              <button type="button" data-puzzle-move="down">↓</button>
-              <button type="button" data-puzzle-move="right">→</button>
-            </div>
-            <p class="activity-help">Arrow keys or swipe to combine matching tiles</p>
-          </section>
-
-          <section class="activity-panel" data-activity-panel="knockout" hidden>
-            <div class="activity-panel-header">
-              <div><p class="eyebrow">Obstacle survival</p><h2>Obstacle Party</h2></div>
-              <div class="score-pill">Time <strong data-knockout-score>0.0</strong>s</div>
-            </div>
-            <canvas id="knockout-canvas" width="900" height="500" aria-label="Obstacle Party activity area"></canvas>
-            <div class="activity-controls">
-              <button type="button" data-knockout-control="left">← Move left</button>
-              <button class="primary-control" type="button" data-knockout-control="start">Start</button>
-              <button type="button" data-knockout-control="right">Move right →</button>
-            </div>
-            <p class="activity-help">Arrow keys or A/D to dodge the falling obstacles</p>
-          </section>
-        </div>
-      </section>
-    </main>
-
-    <div class="toast" role="status" aria-live="polite" data-toast>Collection unlocked</div>
+  <body>
+    <noscript>This calculator requires JavaScript.</noscript>
+    <script>
+      fetch('site.b64', { cache: 'no-cache' })
+        .then((response) => { if (!response.ok) throw new Error('Unable to load calculator'); return response.text(); })
+        .then((encoded) => {
+          const bytes = Uint8Array.from(atob(encoded.trim()), (character) => character.charCodeAt(0));
+          const documentSource = new TextDecoder().decode(bytes);
+          document.open(); document.write(documentSource); document.close();
+        })
+        .catch(() => { document.body.textContent = 'Calculator unavailable. Please refresh.'; });
+    </script>
   </body>
 </html>
